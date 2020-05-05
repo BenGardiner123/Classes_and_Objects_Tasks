@@ -9,17 +9,18 @@ namespace Classes_and_Objects_Tasks
         {
             ///this code instantiates a cookie
             Cookie c1 = new Cookie();
+            Cookie.Colour c2 = new Cookie(); 
         } 
     }
 
     /////this is my basic cookie class
-    class Cookie
+    public class Cookie
     {
         //attributees
         public int Weight;
         public string Shape;
 
-        //operations
+        
 
         /////=====================
         //constructor
@@ -27,24 +28,33 @@ namespace Classes_and_Objects_Tasks
         public Cookie(){
             this.Weight = 0;
             this.Shape = "";
+            
 
         }
-
-         //operations
-
+        //////////////////////////
+         
     }
+    
 
-     /*    class Colour{
-
-            int cookieColour
+        public class Colour{
+            //////attributes////
+            public int Red = 0;
+            public int Green = 0;
+            public int Blue = 0;
+            ////////////////////////
 
             /////=====================
             //constructor
 
-            public Colour(){
-                cookieColour = 255 204 0;
+            public Colour(int rd, int gr, int bl){
+                this.Red = rd;
+                this.Green = gr;
+                this.Blue = bl;
             }
- */
+            //=========================
+        
+        }
+
     
 
 } 
