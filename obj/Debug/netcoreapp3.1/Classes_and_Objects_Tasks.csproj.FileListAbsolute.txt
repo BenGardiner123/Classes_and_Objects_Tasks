@@ -1,0 +1,13 @@
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.csprojAssemblyReference.cache
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.csproj.CoreCompileInputs.cache
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.AssemblyInfoInputs.cache
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.AssemblyInfo.cs
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.exe
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.deps.json
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.runtimeconfig.json
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.runtimeconfig.dev.json
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.dll
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\bin\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.pdb
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.dll
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.pdb
+C:\Users\Cooler Master\Documents\swinburne\Classes_and_Objects_Tasks\obj\Debug\netcoreapp3.1\Classes_and_Objects_Tasks.genruntimeconfig.cache
