@@ -7,13 +7,19 @@ namespace Classes_and_Objects_Tasks
 
         static void Main(string[] args)
         {
-            ///this code instantiates a cookie
-            var c1 = new Cookie(51, "round");
+            ///this code instantiates a cookie and colours
+            
+            var Yellow = new Colour(255, 255, 0, "Yellow");
+            var Red = new Colour(245, 66, 66, "Red");
+            //-------------------------------------------
+            var c1 = new Cookie(51, "round", Yellow);
             var c2 = new Cookie(32, "square"); 
-            var c3 = new Cookie(44, "rectangle");
+            var c3 = new Cookie(44, "rectangle", Red);
             var c4 = new Cookie(66, "oblong"); 
-            System.Console.WriteLine(c1.Shape);
-            System.Console.WriteLine(c1.Weight);
+            System.Console.WriteLine(c1.cl.Name);
+            System.Console.WriteLine(c3.cl.Name);
+            
+            
         } 
     }
 
@@ -28,7 +34,7 @@ namespace Classes_and_Objects_Tasks
         /////=====================
         //constructor
 
-        public Cookie(){
+        public Cookie(int w, string s){
             this.Weight = 0;
             this.Shape = "";
             this.cl = null;
@@ -50,15 +56,18 @@ namespace Classes_and_Objects_Tasks
             public int Red = 0;
             public int Green = 0;
             public int Blue = 0;
+
+            public string Name = "";
             ////////////////////////
 
             /////=====================
             //constructor
 
-            public Colour(int rd, int gr, int bl){
+            public Colour(int rd, int gr, int bl, string name){
                 this.Red = rd;
                 this.Green = gr;
                 this.Blue = bl;
+                this.Name = name; 
             }
             //=========================
         
