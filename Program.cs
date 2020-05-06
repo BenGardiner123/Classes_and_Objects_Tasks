@@ -11,13 +11,12 @@ namespace Classes_and_Objects_Tasks
             
             var Yellow = new Colour(255, 255, 0, "Yellow");
             var Red = new Colour(245, 66, 66, "Red");
-            //-------------------------------------------
+            // can hard code colours into the cookies - btter to create above and pass in.
             var c1 = new Cookie(51, "round", Yellow);
             var c2 = new Cookie(32, "square"); 
             var c3 = new Cookie(44, "rectangle", Red);
             var c4 = new Cookie(66, "oblong"); 
-            System.Console.WriteLine(c1.cl.Name);
-            System.Console.WriteLine(c3.cl.Name);
+        
             
             
         } 
@@ -33,7 +32,7 @@ namespace Classes_and_Objects_Tasks
 
         /////=====================
         //constructor
-
+        // overloading the constructor to allow me to create 2 types of cookies 1 with a colour and 1 without//
         public Cookie(int w, string s){
             this.Weight = 0;
             this.Shape = "";
@@ -44,6 +43,7 @@ namespace Classes_and_Objects_Tasks
         {
             this.Weight = w;
             this.Shape = s;
+            /////when printing to the console need to ref this not name of the new colour 
             this.cl = c;
         }
         //////////////////////////
