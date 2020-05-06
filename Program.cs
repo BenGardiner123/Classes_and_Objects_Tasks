@@ -23,15 +23,22 @@ namespace Classes_and_Objects_Tasks
         //attributees
         public int Weight;
         public string Shape;
+        public Colour cl;
 
         /////=====================
         //constructor
 
-        public Cookie(int w, string s){
+        public Cookie(){
+            this.Weight = 0;
+            this.Shape = "";
+            this.cl = null;
+        }
+
+        public Cookie(int w, string s, Colour c)
+        {
             this.Weight = w;
             this.Shape = s;
-            
-
+            this.cl = c;
         }
         //////////////////////////
          
