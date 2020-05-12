@@ -83,17 +83,31 @@ namespace Classes_and_Objects_Tasks
 
         static void Main(string[] args)
         {
+
+            Subject s1 = new Subject("English", 1988);
+            Subject s2 = new Subject("French", 1988);
+            Subject s3 = new Subject("Post-Modern Art", 1988);
+
+
             var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
             var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
-            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19), new Random(1, 1000));
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
 
+          
+
+    
             Console.WriteLine(p1.getFullName() + " has " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
 
             Console.WriteLine(p2.getFullName() + " has " + p2.GetHeightDifference(p1) + " cm difference to " + p1.getFullName() + " and has " + p2.GetHeightDifference(p3) + " cm difference to " + p3.getFullName());
 
             Console.WriteLine(p3.getFullName() + " has " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
+
+            
+            
         
         } 
+
+        
 
     }
      public class Person
@@ -103,19 +117,28 @@ namespace Classes_and_Objects_Tasks
         public string Surname;
         public int Height;
         public DateTime DOB;
-        public Random id;
+        public List<Subject> perSub;
+
+        
 
         /////=====================
         //constructor
         // overloading the constructor to allow differernt tyes of date///
-        public Person(string f, string s, int h, DateTime d, int i)
+        public Person()
+        {
+            
+        }
+        
+        public Person(string f, string s, int h, DateTime d, List<Subject> l)
         {
             this.FirstName = f;
             this.Surname = s;
             this.Height = h;
             this.DOB = d;
-            this.id = ;
+            this.perSub = new List<Subject>();
         }
+        
+
        
             public string getFullName()
             {
@@ -128,36 +151,34 @@ namespace Classes_and_Objects_Tasks
                 return this.Height - p.Height;
                 
             }
-    }
+            
+           
 
-            public class Random
-            {   
-            ///attributes///
-            public int Min;
-            public int Max;
-
-            /// constructor///
-            public Random(int min, int max)
-            {
-                Min = min;
-                Max = max;
-            }
-
-            public int newRand()
-            {
-            Random random = new System.Random();
-            int value = random.Next(0, 100);
-            }
-
-    }
 
     
 
+    }
+
+    public class Subject {
+        string name;
+        int YearofDelivery;
+
+        /// constructor 
+
+        public Subject(string name, int yearofDelivery)
+        {
+            this.name = name;
+            YearofDelivery = yearofDelivery;
+
+        }
+
+
+
+    }
+
+
+
+    
+    
 }
-
-
-
-    
-    
-
 
