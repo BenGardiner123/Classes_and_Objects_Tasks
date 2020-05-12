@@ -80,17 +80,15 @@ namespace Classes_and_Objects_Tasks
 
         static void Main(string[] args)
         {
-            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1921,01,09));
-            //////////////////////
-           //// DateTime dob = DateTime.Parse(Console.ReadLine());
-            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1925,06,08));
-            var p3 = new Person("Peter", "Pan", 199, new DateTime(1926,05,19));
+            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
+            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
 
-            Console.WriteLine(p1.getFullName() + " is " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + "and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
+            Console.WriteLine(p1.getFullName() + " has " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
 
-            Console.WriteLine(p2.getFullName() + " is " + p2.GetHeightDifference(p1) + " cm difference to " + p1.getFullName() + "and has " + p2.GetHeightDifference(p3) + " cm difference to " + p3.getFullName());
+            Console.WriteLine(p2.getFullName() + " has " + p2.GetHeightDifference(p1) + " cm difference to " + p1.getFullName() + " and has " + p2.GetHeightDifference(p3) + " cm difference to " + p3.getFullName());
 
-            Console.WriteLine(p3.getFullName() + " is " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + "and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
+            Console.WriteLine(p3.getFullName() + " has " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
         
         } 
 
@@ -102,6 +100,7 @@ namespace Classes_and_Objects_Tasks
         public string Surname;
         public int Height;
         public DateTime DOB;
+        public int id;
 
         /////=====================
         //constructor
