@@ -2,7 +2,7 @@
 
 namespace Classes_and_Objects_Tasks
 {
-    class Program
+ /*    class Program
     {
 
         static void Main(string[] args)
@@ -16,10 +16,10 @@ namespace Classes_and_Objects_Tasks
             var c2 = new Cookie(32, "square"); 
             var c3 = new Cookie(44, "rectangle", Red);
             var c4 = new Cookie(66, "oblong"); 
-        
-            
-            
+    
         } 
+
+
     }
 
     /////this is my basic cookie class
@@ -51,28 +51,99 @@ namespace Classes_and_Objects_Tasks
     }
     
 
-        public class Colour{
-            //////attributes////
-            public int Red = 0;
-            public int Green = 0;
-            public int Blue = 0;
+    public class Colour{
+        //////attributes////
+        public int Red = 0;
+        public int Green = 0;
+        public int Blue = 0;
 
-            public string Name = "";
-            ////////////////////////
+        public string Name = "";
+        ////////////////////////
 
-            /////=====================
-            //constructor
+        /////=====================
+        //constructor
 
-            public Colour(int rd, int gr, int bl, string name){
-                this.Red = rd;
-                this.Green = gr;
-                this.Blue = bl;
-                this.Name = name; 
-            }
-            //=========================
+        public Colour(int rd, int gr, int bl, string name){
+            this.Red = rd;
+            this.Green = gr;
+            this.Blue = bl;
+            this.Name = name; 
+        }
+        //=========================
+    
+    }
+ */
+    
+//////////// TASK 2 ....--------....-----....------ TASK 2//////////////////
+ class Program
+    {
+
+        static void Main(string[] args)
+        {
+            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1921,01,09));
+            //////////////////////
+           //// DateTime dob = DateTime.Parse(Console.ReadLine());
+            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1925,06,08));
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1926,05,19));
+
+            Console.WriteLine(p1.getFullName() + " is " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + "and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
+
+            Console.WriteLine(p2.getFullName() + " is " + p2.GetHeightDifference(p1) + " cm difference to " + p1.getFullName() + "and has " + p2.GetHeightDifference(p3) + " cm difference to " + p3.getFullName());
+
+            Console.WriteLine(p3.getFullName() + " is " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + "and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
         
+        } 
+
+    }
+     public class Person
+    {
+        //attributees
+        public string FirstName;
+        public string Surname;
+        public int Height;
+        public DateTime DOB;
+
+        /////=====================
+        //constructor
+        // overloading the constructor to allow differernt tyes of date///
+        public Person(string f, string s, int h, DateTime d)
+        {
+            this.FirstName = f;
+            this.Surname = s;
+            this.Height = h;
+            this.DOB = d;
+        }
+       
+
+        public string getFullName()
+        {
+              return this.FirstName + " " + this.Surname;
         }
 
-    
+        public int GetHeightDifference(Person p)
+        {
+            
+            return this.Height - p.Height;
+            
+        }
+    }
 
-} 
+
+     /*    class DateOfBirth
+        {
+            public int Month;
+            public int Day;
+            public int Year;
+
+            public DateOfBirth(int month, int day, int year)
+            {
+                this.Day = day;
+                this.Month = month;
+                this.Year = year;
+            }
+        } */
+
+}
+
+
+
