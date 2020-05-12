@@ -88,10 +88,20 @@ namespace Classes_and_Objects_Tasks
             Subject s2 = new Subject("French", 1988);
             Subject s3 = new Subject("Post-Modern Art", 1988);
 
+            List<Subject> sublist1 = new List<Subject>();
+            sublist1.Add(s1);
+            sublist1.Add(s2);
+            sublist1.Add(s3);
 
-            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
-            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
-            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
+            List<Subject> sublist2 = new List<Subject>();
+            sublist2.Add(s1);
+            sublist2.Add(s2);
+            sublist2.Add(s3);
+
+
+            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09), sublist1);
+            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08), sublist2);
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19), sublist1);
 
           
 
@@ -149,6 +159,11 @@ namespace Classes_and_Objects_Tasks
             {
                 
                 return this.Height - p.Height;
+                
+            }
+
+            public addSubs()
+            {
                 
             }
             
