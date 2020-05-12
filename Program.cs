@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;  
+using System.Linq;
+using System.Text;   
 
 namespace Classes_and_Objects_Tasks
 {
@@ -82,7 +85,7 @@ namespace Classes_and_Objects_Tasks
         {
             var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
             var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
-            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19), new Random(1, 1000));
 
             Console.WriteLine(p1.getFullName() + " has " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
 
@@ -100,49 +103,61 @@ namespace Classes_and_Objects_Tasks
         public string Surname;
         public int Height;
         public DateTime DOB;
-        public int id;
+        public Random id;
 
         /////=====================
         //constructor
         // overloading the constructor to allow differernt tyes of date///
-        public Person(string f, string s, int h, DateTime d)
+        public Person(string f, string s, int h, DateTime d, int i)
         {
             this.FirstName = f;
             this.Surname = s;
             this.Height = h;
             this.DOB = d;
+            this.id = ;
         }
        
+            public string getFullName()
+            {
+                return this.FirstName + " " + this.Surname;
+            }
 
-        public string getFullName()
-        {
-              return this.FirstName + " " + this.Surname;
-        }
-
-        public int GetHeightDifference(Person p)
-        {
-            
-            return this.Height - p.Height;
-            
-        }
+            public int GetHeightDifference(Person p)
+            {
+                
+                return this.Height - p.Height;
+                
+            }
     }
 
+            public class Random
+            {   
+            ///attributes///
+            public int Min;
+            public int Max;
 
-     /*    class DateOfBirth
-        {
-            public int Month;
-            public int Day;
-            public int Year;
-
-            public DateOfBirth(int month, int day, int year)
+            /// constructor///
+            public Random(int min, int max)
             {
-                this.Day = day;
-                this.Month = month;
-                this.Year = year;
+                Min = min;
+                Max = max;
             }
-        } */
+
+            public int newRand()
+            {
+            Random random = new System.Random();
+            int value = random.Next(0, 100);
+            }
+
+    }
+
+    
 
 }
 
+
+
+    
+    
 
 
