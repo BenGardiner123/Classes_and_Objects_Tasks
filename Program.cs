@@ -84,25 +84,11 @@ namespace Classes_and_Objects_Tasks
         static void Main(string[] args)
         {
 
-            Subject s1 = new Subject("English", 1988);
-            Subject s2 = new Subject("French", 1988);
-            Subject s3 = new Subject("Post-Modern Art", 1988);
+    
 
-            List<Subject> sublist1 = new List<Subject>();
-            sublist1.Add(s1);
-            sublist1.Add(s2);
-            sublist1.Add(s3);
-
-            List<Subject> sublist2 = new List<Subject>();
-            sublist2.Add(s1);
-            sublist2.Add(s2);
-            sublist2.Add(s3);
-
-
-            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09), sublist1);
-            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08), sublist2);
-            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19), sublist1);
-
+            var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
+            var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
+            var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
           
 
     
@@ -112,7 +98,12 @@ namespace Classes_and_Objects_Tasks
 
             Console.WriteLine(p3.getFullName() + " has " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
 
-            p1.addlistSubjects
+            p1.addlistSubjects("Maths", 1888);
+            p3.addlistSubjects("English", 1988);
+            p2.addlistSubjects("French", 1988);
+            p1.addlistSubjects("Post-Modern Art", 1988);
+
+            Console.WriteLine(p1.prinSubjectList());
             
         
         } 
@@ -120,35 +111,64 @@ namespace Classes_and_Objects_Tasks
         
 
     }
-     public class Person
-    {
-        //attributees
-        public string FirstName;
-        public string Surname;
-        public int Height;
-        public DateTime DOB;
-        public List<Subject> perSub;
+        public class Person
+        {
+            //attributees
+            public string FirstName;
+            public string Surname;
+            public int Height;
+            public DateTime DOB;
+            public List<Subject> perSub;
+            public int ID;
 
         
 
-        /////=====================
-        //constructor
-        // overloading the constructor to allow differernt tyes of date///
-        public Person()
-        {
+            /////=====================
+            //constructor
+            // overloading the constructor to allow differernt tyes of date///
+            public Person()
+            {
+                
+            }
             
-        }
-        
-        public Person(string f, string s, int h, DateTime d, List<Subject> l)
-        {
-            this.FirstName = f;
-            this.Surname = s;
-            this.Height = h;
-            this.DOB = d;
-            this.perSub = new List<Subject>();
+            public Person(string f, string s, int h, DateTime d)
+            {
+                this.FirstName = f;
+                this.Surname = s;
+                this.Height = h;
+                this.DOB = d;
+                this.perSub = new List<Subject>();
 
-        }
-        
+               // create random object
+               // object.Next(n, n)
+               var rand = new Random();
+               int randID = rand.Next(1000, 10000);
+               this.ID = randID;
+                
+
+
+            }
+
+            ///string builder method--- comes with the convert to string method at the end////
+            ///ideally made for building a string for a loop ////
+            public string prinSubjectList(){
+                StringBuilder builder = new StringBuilder();
+
+                string someString = "";
+                foreach (Subject subjects in this.perSub)
+                {
+                    //builder.Append(subjects.name + " ");
+                    //builder.Append(subjects.YearofDelivery + "\n" );
+
+                  ////  someString += subjects.name + " ";
+                  ////  someString += subjects.YearofDelivery + " ";
+                  
+                    //////string interpolation///
+                  someString += $"{subjects.name} {subjects.YearofDelivery}\n";
+                }
+                return someString;
+                // return builder.ToString();
+            }
 
        
             public string getFullName()
@@ -158,16 +178,13 @@ namespace Classes_and_Objects_Tasks
 
             public int GetHeightDifference(Person p)
             {
-                
                 return this.Height - p.Height;
-                
             }
 
               public void addlistSubjects(string subname, int subyear)
             {
                 var addlistSubjects = new Subject(subname, subyear);
                 this.perSub.Add(addlistSubjects);
-
             }
               
            
@@ -178,8 +195,8 @@ namespace Classes_and_Objects_Tasks
     }
 
     public class Subject {
-        string name;
-        int YearofDelivery;
+        public string name;
+        public int YearofDelivery;
 
         /// constructor 
 
@@ -189,6 +206,7 @@ namespace Classes_and_Objects_Tasks
             this.YearofDelivery = yearofDelivery;
 
         }
+
 
 
 
