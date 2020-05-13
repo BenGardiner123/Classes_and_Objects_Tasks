@@ -112,7 +112,7 @@ namespace Classes_and_Objects_Tasks
 
             Console.WriteLine(p3.getFullName() + " has " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
 
-            
+            p1.addlistSubjects
             
         
         } 
@@ -146,6 +146,7 @@ namespace Classes_and_Objects_Tasks
             this.Height = h;
             this.DOB = d;
             this.perSub = new List<Subject>();
+
         }
         
 
@@ -162,11 +163,13 @@ namespace Classes_and_Objects_Tasks
                 
             }
 
-            public addSubs()
+              public void addlistSubjects(string subname, int subyear)
             {
-                
+                var addlistSubjects = new Subject(subname, subyear);
+                this.perSub.Add(addlistSubjects);
+
             }
-            
+              
            
 
 
@@ -183,7 +186,7 @@ namespace Classes_and_Objects_Tasks
         public Subject(string name, int yearofDelivery)
         {
             this.name = name;
-            YearofDelivery = yearofDelivery;
+            this.YearofDelivery = yearofDelivery;
 
         }
 
