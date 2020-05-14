@@ -83,28 +83,39 @@ namespace Classes_and_Objects_Tasks
 
         static void Main(string[] args)
         {
-
-    
-
+            ///here im instantiating 3 new people
             var p1 = new Person("Ben", "Gardiner", 182, new DateTime(1981,01,09));
             var p2 = new Person("Dave", "Matthews", 167, new DateTime(1966,06,08));
             var p3 = new Person("Peter", "Pan", 199, new DateTime(1996,05,19));
-          
-
-    
+        
+            ///using my 2 functions inside of the Person class i get thefullnames and height differenes b/w them
             Console.WriteLine(p1.getFullName() + " has " + p1.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p1.GetHeightDifference(p3) + " cm difference to " + p2.getFullName());
 
             Console.WriteLine(p2.getFullName() + " has " + p2.GetHeightDifference(p1) + " cm difference to " + p1.getFullName() + " and has " + p2.GetHeightDifference(p3) + " cm difference to " + p3.getFullName());
 
             Console.WriteLine(p3.getFullName() + " has " + p3.GetHeightDifference(p2) + " cm difference to " + p2.getFullName() + " and has " + p3.GetHeightDifference(p1) + " cm difference to " + p1.getFullName());
-
+            //// here i can add new subjects an allocate them to a person using the method 
             p1.addlistSubjects("Maths", 1888);
             p3.addlistSubjects("English", 1988);
             p2.addlistSubjects("French", 1988);
             p1.addlistSubjects("Post-Modern Art", 1988);
 
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Here is a list of their subjects");
+            Console.WriteLine(p1.getFullName() + " studies ");
             Console.WriteLine(p1.prinSubjectList());
-            
+            Console.WriteLine(p2.getFullName() + " studies "); 
+            Console.WriteLine(p2.prinSubjectList());
+            Console.WriteLine(p3.getFullName() + " studies ");
+            Console.WriteLine(p3.prinSubjectList());
+
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Here are their ID's");
+            Console.WriteLine(p1.getFullName() + "'s " + " ID is " + p1.ID);
+            Console.WriteLine(p2.getFullName() + "'s " + " ID is " + p2.ID);
+            Console.WriteLine(p3.getFullName() + "'s " + " ID is " + p3.ID);
+
+
         
         } 
 
@@ -123,13 +134,8 @@ namespace Classes_and_Objects_Tasks
 
         
 
-            /////=====================
-            //constructor
-            // overloading the constructor to allow differernt tyes of date///
-            public Person()
-            {
-                
-            }
+            
+            //constructor///////////////
             
             public Person(string f, string s, int h, DateTime d)
             {
@@ -137,37 +143,40 @@ namespace Classes_and_Objects_Tasks
                 this.Surname = s;
                 this.Height = h;
                 this.DOB = d;
+                ////now when i do this there will be a list created without anything in it.
                 this.perSub = new List<Subject>();
 
-               // create random object
-               // object.Next(n, n)
+               // here we create an instance of a random object
                var rand = new Random();
+               // then i need to store the random number in somewhere object.Next(n, n)
                int randID = rand.Next(1000, 10000);
+               //now make the output = to this persons ID.
                this.ID = randID;
-                
+               // because this is inside the constructor, everytime an instance of a person is created a random Id will be created in this.ID
 
 
             }
 
+            //=-------------methods for Person ----------=//
             ///string builder method--- comes with the convert to string method at the end////
-            ///ideally made for building a string for a loop ////
+            ///ideally made for building a string from a loop ////
             public string prinSubjectList(){
                 StringBuilder builder = new StringBuilder();
 
-                string someString = "";
+                //string someString = "";
                 foreach (Subject subjects in this.perSub)
                 {
-                    //builder.Append(subjects.name + " ");
-                    //builder.Append(subjects.YearofDelivery + "\n" );
+                    builder.Append(subjects.name + " ");
+                    builder.Append(subjects.YearofDelivery + "\n" );
 
                   ////  someString += subjects.name + " ";
                   ////  someString += subjects.YearofDelivery + " ";
-                  
+                        //or///
                     //////string interpolation///
-                  someString += $"{subjects.name} {subjects.YearofDelivery}\n";
+                  ///someString += $"{subjects.name} {subjects.YearofDelivery}\n";
                 }
-                return someString;
-                // return builder.ToString();
+                return builder.ToString();
+                // returns builder.ToString();
             }
 
        
@@ -181,9 +190,12 @@ namespace Classes_and_Objects_Tasks
                 return this.Height - p.Height;
             }
 
+            ///this function creates a new instance of a Subject and adds it to the list of subjects associated with the person it's called on.
               public void addlistSubjects(string subname, int subyear)
             {
+                ///create the new instance of a subject using the constructor from Subject (arguments from the function above)
                 var addlistSubjects = new Subject(subname, subyear);
+                //theperson it's called on. the list name in attributes.the add method(the variable where th info is stored)
                 this.perSub.Add(addlistSubjects);
             }
               
